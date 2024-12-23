@@ -1,0 +1,530 @@
+/********** Template CSS **********/
+:root {
+    --primary: #EB1616;
+    --secondary: #191C24;
+    --light: #6C7293;
+    --dark: #000000;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+/* Custom styles for active navigation link */
+.navbar-nav .nav-link {
+    color: #fff; /* Default color */
+} 
+
+.navbar-nav .nav-link.active {
+    color: #f00; /* Active link color (red) */
+    font-weight: bold; /* Optional: Make the active link bold */
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 40px 0;
+    color: var(--light);
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link,
+    .navbar.shadow-sm .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        margin-top: 8px;
+        border-top: 1px solid var(--light);
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.shadow-sm .navbar-nav .nav-link {
+        padding: 20px 0;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+
+.carousel-image {
+    height: 85vh; /* Set a fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the entire area without stretching */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Take full width of the image */
+    height: 100%; /* Take full height of the image */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better visibility */
+    display: flex; /* Use Flexbox to center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, .85), rgba(0, 0, 0, .85)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Service ***/
+.service-item .btn {
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    color: var(--primary);
+    background: var(--dark);
+    opacity: 0;
+}
+
+.service-item:hover .btn {
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+}
+
+
+/*** Team ***/
+.team-item .team-img::before,
+.team-item .team-img::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .85);
+    transition: .5s;
+}
+
+.team-item .team-img::after {
+    left: auto;
+    right: 0;
+}
+
+.team-item:hover .team-img::before,
+.team-item:hover .team-img::after {
+    width: 50%;
+}
+
+.team-item .team-img .team-social {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    z-index: 3;
+    opacity: 0;
+}
+
+.team-item:hover .team-img .team-social {
+    transition-delay: .3s;
+    opacity: 1;
+}
+
+.team-item .team-social .btn {
+    display: inline-flex;
+    margin: 0 3px;
+    color: var(--primary);
+    background: var(--dark);
+}
+
+.team-item .team-social .btn:hover {
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 35px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dots .owl-dot {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    padding: 10px;
+    background: var(--secondary);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active {
+    width: 100px;
+    height: 100px;
+}
+
+.testimonial-carousel .owl-dots .owl-dot img {
+    opacity: .1;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active img {
+    opacity: 1;
+}
+
+
+/* Event */
+/* Container for the image and overlay */
+.event-container {
+    position: relative; /* Needed to position the overlay */
+    width: 100%; /* Ensures the container takes full width */
+    height: 250px; /* Set a fixed height */
+    margin-bottom: 20px; /* Space between event containers */
+    overflow: hidden; /* Hide overflowing elements */
+    border-radius: 10px; /* Rounded corners for the container */
+}
+
+/* Image styling remains the same */
+.event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure all images are the same size */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.event-container:hover .event-image {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Overlay with event name */
+.event-overlay {
+    position: absolute; /* Absolute positioning */
+    bottom: 0; /* Align to bottom */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: #fff; /* White text */
+    padding: 10px; /* Padding for text */
+    text-align: center; /* Center text */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for showing */
+    border-bottom-left-radius: 10px; /* Match container border radius */
+    border-bottom-right-radius: 10px; /* Match container border radius */
+}
+
+.event-container:hover .event-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.event-image {
+    border: 5px solid #35343c; /* Add a border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+    object-fit: cover; /* Ensure all images are the same size */
+    width: 100%; /* Ensure images take up full width */
+    height: 250px; /* Fixed height */
+}
+
+.event-image:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Styles for Modal */
+.modal-content {
+    border-radius: 15px; /* Rounded corners */
+    border: 2px solid #070000; /* Border for modal */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow for modal */
+}
+
+.modal-header {
+    background-color: #070000; /* Light background for header */
+    border-bottom: 1px solid #070000; /* Border bottom */
+}
+
+.modal-title {
+    font-weight: 600; /* Make title bold */
+    color: #fcfbfb; /* Dark color for title */
+}
+
+.modal-body {
+    text-align: center; /* Center align text */
+    padding: 20px; /* Padding for body */
+}
+
+.modal-body ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.modal-body li {
+    margin-bottom: 10px; /* Spacing between list items */
+    font-size: 16px; /* Font size for list items */
+    color: #555; /* Subtle color */
+}
+
+/* Center the modal on the screen */
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure it takes at least full height */
+}
+
+
+/*** Footer ***/
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--light);
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 1.5rem;
+    font-size: 15px;
+    background: var(--dark);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .copyright a:hover {
+    color: var(--primary);
+}
+
+
+.test-text{
+    text-align: center;
+}
+
+
+
+/* NEWS-LETTER CONTAINER START */
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.links-newsletter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px; /* Adds space between the quick links and newsletter */
+}
+
+.newsletter-container {
+    max-width: 300px;
+}
+
+.newsletter-container input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-container button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.newsletter-container button:hover {
+    background-color: #c82333;
+}
+
+
+/* Hidden Modal CSS */
+#thankYouModal {
+display: none;
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.6);
+justify-content: center;
+align-items: center;
+z-index: 1;
+}
+.modal-content {
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+text-align: right;
+width: 300px;
+}
+/* Checkbox trick to trigger modal visibility */
+#showModal:checked ~ #thankYouModal {
+display: flex;
+}
+
+/* Styling for hidden checkbox trigger */
+#showModal {
+display: none;
+}
