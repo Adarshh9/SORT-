@@ -23,13 +23,13 @@ const Navbar: React.FC = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarCollapse">
         <div className="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" className="nav-item nav-link">
+          <a href="/" className="nav-item nav-link">
             Home
           </a>
           <a href="about.html" className="nav-item nav-link">
             About Us
           </a>
-          <a href="event.html" className="nav-item nav-link">
+          <a href="events" className="nav-item nav-link">
             Our Events
           </a>
           <a href="magazine.html" className="nav-item nav-link">

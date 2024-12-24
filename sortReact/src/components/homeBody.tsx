@@ -1,9 +1,19 @@
-import React from "react";
-// import WOW from "wow.js";
+import WOW from "wowjs";
 import bg_1 from "./img/bg-1.webp";
 import bg_2 from "./img/bg2.webp";
 
 const homeBody = () => {
+  // wow not working
+
+  // const wow = new WOW({
+  //   boxClass: "wow",
+  //   animateClass: "animate__animated",
+  //   offset: 0,
+  //   mobile: true,
+  //   live: true,
+  // });
+
+  // wow.init();
   return (
     <>
       {/* Carousel Start */}
@@ -39,11 +49,7 @@ const homeBody = () => {
               </div>
               {/* Second Carousel Item */}
               <div className="carousel-item">
-                <img
-                  className="w-100 carousel-image"
-                  src={bg_2}
-                  alt="Image"
-                />
+                <img className="w-100 carousel-image" src={bg_2} alt="Image" />
                 <div className="carousel-caption d-flex align-items-center justify-content-center text-start">
                   <div className="mx-sm-5 px-5" style={{ maxWidth: "900px" }}>
                     <h1 className="display-2 text-white text-uppercase mb-4 animated slideInDown">

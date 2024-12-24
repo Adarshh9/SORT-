@@ -6,8 +6,12 @@ import Navbar from "./components/navBar";
 import HomeBody from "./components/homeBody";
 import Footer from "./components/footer";
 import HomeJsLibs from "./components/homeJsLibs";
+import Events from "./components/events";
+import EventsHeader from "./components/eventsHeader";
 
-function App() {
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+function Home() {
   return (
     <>
       <Header />
@@ -16,6 +20,29 @@ function App() {
       <Footer />
       <HomeJsLibs />
     </>
+  );
+}
+
+function EventsFn() {
+  return (
+    <>
+      <EventsHeader />
+      <Navbar />
+      <Events />
+      <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<EventsFn />} />
+      </Routes>
+    </Router>
+    // <Events/>
   );
 }
 
