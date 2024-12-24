@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
       className="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn"
       data-wow-delay="0.1s"
     >
-      <a href="index.html" className="navbar-brand ms-4 ms-lg-0">
+      <a href="/" className="navbar-brand ms-4 ms-lg-0">
         <h1 className="mb-0 text-primary text-uppercase">
           <img src={logo} alt="Sort Club Logo" width="20%" />
           SORT
@@ -26,13 +26,13 @@ const Navbar: React.FC = () => {
           <a href="/" className="nav-item nav-link">
             Home
           </a>
-          <a href="about.html" className="nav-item nav-link">
+          <a href="/" className="nav-item nav-link">
             About Us
           </a>
           <a href="events" className="nav-item nav-link">
             Our Events
           </a>
-          <a href="magazine.html" className="nav-item nav-link">
+          <a href="/" className="nav-item nav-link">
             Magazine
           </a>
         </div>

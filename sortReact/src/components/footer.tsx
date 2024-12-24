@@ -49,16 +49,16 @@ const Footer = () => {
               {/* Quick Links */}
               <div className="col-lg-4 col-md-6">
                 <h4 className="text-uppercase mb-4">Quick Links</h4>
-                <a className="btn btn-link" href="index.html">
+                <a className="btn btn-link" href="/">
                   Home
                 </a>
-                <a className="btn btn-link" href="about.html">
+                <a className="btn btn-link" href="/">
                   About Us
                 </a>
-                <a className="btn btn-link" href="magazine.html">
+                <a className="btn btn-link" href="/">
                   Magazine
                 </a>
-                <a className="btn btn-link" href="event.html">
+                <a className="btn btn-link" href="events">
                   Our Events
                 </a>
               </div>
