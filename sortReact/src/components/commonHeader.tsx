@@ -1,7 +1,7 @@
 const commonHeader = () => {
   return (
     <>
-      <head>
+      {/* <head> */}
         <meta charSet="utf-8" />
         <title>SORT and Literary Club</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -45,11 +45,7 @@ const commonHeader = () => {
           href="lib/owlcarousel/assets/owl.carousel.min.css"
           rel="stylesheet"
         />
-
-        {/* <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"> */}
-      </head>
+      {/* </head> */}
     </>
   );
 };
