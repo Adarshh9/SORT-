@@ -7,7 +7,6 @@ import HomeBody from "./components/homeBody";
 import Footer from "./components/footer";
 import HomeJsLibs from "./components/homeJsLibs";
 import Events from "./components/events";
-import CommonHeader from "./components/commonHeader";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -31,7 +30,6 @@ function EventsFn() {
 function App() {
   return (
     <Router>
-      <CommonHeader />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
